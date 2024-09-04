@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getUserSessions } from '../utils/api';
+import './SessionOverview.css';
 
 const SessionOverview: React.FC = () => {
     const [sessions, setSessions] = useState([]);
@@ -13,7 +14,7 @@ const SessionOverview: React.FC = () => {
     }, []);
 
     return (
-        <div>
+        <div className="session-overview-container">
             <h3>Upcoming Sessions</h3>
             <ul>
                 {sessions.map((session: any, index: number) => (

@@ -1,0 +1,95 @@
+/* General container styling */
+.admin-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.admin-dashboard-container h3,
+.admin-dashboard-container h4 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Select dropdown styling */
+.admin-dashboard-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Availability list styling */
+.admin-dashboard-container ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-container li {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Input field styling */
+.admin-dashboard-container input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Button styling */
+.admin-dashboard-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.admin-dashboard-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .admin-dashboard-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .admin-dashboard-container h3,
+    .admin-dashboard-container h4 {
+        font-size: 1.2rem;
+    }
+
+    .admin-dashboard-container select,
+    .admin-dashboard-container input,
+    .admin-dashboard-container button {
+        font-size: 0.9rem;
+    }
+}

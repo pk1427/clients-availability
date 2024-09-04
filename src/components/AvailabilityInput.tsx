@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { postAvailability } from '../utils/api';
+import './AvailabilityInput.css';
+
 
 const AvailabilityInput: React.FC = () => {
     const { user } = useContext(AuthContext);
@@ -20,7 +22,7 @@ const AvailabilityInput: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="availability-container">
             <h3>Set Your Availability</h3>
             <input 
                 type="date" 

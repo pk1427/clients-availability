@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers, getUserAvailability, scheduleSession } from '../utils/api';
+import './AdminDashboard.css';
 
 const AdminDashboard: React.FC = () => {
     const [users, setUsers] = useState([]);
@@ -31,7 +32,7 @@ const AdminDashboard: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className="admin-dashboard-container">
             <h3>Select User</h3>
             <select onChange={(e) => handleUserSelect(e.target.value)}>
                 <option value="">Select a user</option>

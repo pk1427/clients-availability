@@ -1,0 +1,35 @@
+/* General container styling */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.admin-container h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Component container styling */
+.admin-container > * {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .admin-container {
+        padding: 15px;
+    }
+
+    .admin-container h2 {
+        font-size: 1.5rem;
+    }
+}

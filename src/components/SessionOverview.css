@@ -1,0 +1,52 @@
+/* General container styling */
+.session-overview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.session-overview-container h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Session list styling */
+.session-overview-container ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.session-overview-container li {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .session-overview-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .session-overview-container h3 {
+        font-size: 1.2rem;
+    }
+
+    .session-overview-container li {
+        font-size: 0.9rem;
+    }
+}
