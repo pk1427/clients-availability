@@ -11,7 +11,7 @@ function Login() {
   const loginUser = async () => {
     try {
       // Make API call to login the user with the email
-      const response = await axios.post('http://localhost:5000/api/users/login', { email });
+      const response = await axios.post('https://clients-availability-1.onrender.com/api/users/login', { email });
 
       if (response.status === 200) {
         // On successful login, store user data and redirect to Admin page

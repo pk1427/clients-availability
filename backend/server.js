@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware setup
 app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your frontend URL
+  origin: ['https://clients-availability-1.onrender.com', 'https://clients-availability-z1cg.vercel.app'], // Add all frontend URLs here
 }));
 
 app.use(express.json());

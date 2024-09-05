@@ -15,7 +15,7 @@ function Home() {
   // loginUser function with TypeScript typing for email
   const loginUser = async (email: string) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', { email });
+      const response = await axios.post('https://clients-availability-1.onrender.com/api/users/login', { email });
       setUser(response.data);
     } catch (error) {
       console.error('Error logging in:', error);

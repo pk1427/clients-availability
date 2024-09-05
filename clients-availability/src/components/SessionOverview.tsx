@@ -20,7 +20,7 @@ function SessionOverview({ availability }: SessionOverviewProps) {
 
     try {
       // Assuming you have an API endpoint for scheduling sessions
-      const response = await axios.post('http://localhost:5000/api/schedule', {
+      const response = await axios.post('https://clients-availability-1.onrender.com/api/schedule', {
         user: 'Admin', // Replace this with a dynamic user if necessary
         start: selectedSlot.start,
         end: selectedSlot.end,

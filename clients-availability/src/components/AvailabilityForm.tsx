@@ -15,7 +15,7 @@ function AvailabilityForm({ user }: AvailabilityFormProps) {
     e.preventDefault();
     try {
       // Posting availability to the backend API
-      const response = await axios.post('http://localhost:5000/api/availability', {
+      const response = await axios.post('https://clients-availability-1.onrender.com/api/availability', {
         user,
         start,
         end,

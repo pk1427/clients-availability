@@ -20,9 +20,9 @@ function Admin() {
   const [selectedUser, setSelectedUser] = useState<User | null>(null); // Nullable User object
   const [availability, setAvailability] = useState<Availability[]>([]); // Array of Availability objects
 
-  useEffect(() => {
+  useEffect(() => { 
     // Fetch users from API and set them
-    axios.get('http://localhost:5000/api/users')
+    axios.get('https://clients-availability-1.onrender.com/api/users')
       .then((response) => setUsers(response.data))
       .catch((error) => console.error('Error fetching users:', error));
   }, []);
@@ -30,7 +30,7 @@ function Admin() {
   const fetchAvailability = async (userId: string) => {
     try {
       // Fetch availability for the selected user
-      const response = await axios.get(`http://localhost:5000/api/availability/${userId}`);
+      const response = await axios.get(`https://clients-availability-1.onrender.com/api/availability/${userId}`);
       setAvailability(response.data);
     } catch (error) {
       console.error('Error fetching availability:', error);
