@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // For redirection after login
+import './Login.css';
 
 function Login() {
   const [email, setEmail] = useState(''); // State for storing user email input
@@ -32,7 +33,7 @@ function Login() {
   };
 
   return (
-    <div className="container">
+    <div className="container-login">
       <h2>Login</h2>
 
       {/* Input for email */}

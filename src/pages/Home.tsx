@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import AvailabilityForm from '../components/AvailabilityForm'; // Assuming this component exists
+import './Home.css'
 
 interface User {
   _id: string;
@@ -23,7 +24,7 @@ function Home() {
   };
 
   return (
-    <div className="container">
+    <div className="container-home">
       <h1>Schedule Your Avalability</h1>
       {/* Input field for entering email */}
       <input

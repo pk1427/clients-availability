@@ -1,38 +1,90 @@
-.App {
+/* app.css */
+
+/* General styling for main content areas */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.header {
+  background: #007bff;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Navigation bar styling */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navbar a:hover {
+  background: #0056b3;
+  border-radius: 4px;
+}
+
+/* Button styling */
+.button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button:hover {
+  background: #0056b3;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Footer styling */
+.footer {
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  border-radius: 0 0 8px 8px;
+  margin-top: auto;
 }

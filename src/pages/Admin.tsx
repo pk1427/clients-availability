@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import SessionOverview from '../components/SessionOverview';
+import './Admin.css'
 
 interface User {
   _id: string;
@@ -37,7 +38,7 @@ function Admin() {
   };
 
   return (
-    <div className="container">
+    <div className="container-admin">
       <h1>Client Dashboard</h1>
       <select
         className="form-select"
@@ -61,6 +62,7 @@ function Admin() {
       >
         View Availability
       </button>
+
 
       {availability.length > 0 && <SessionOverview availability={availability} />}
     </div>

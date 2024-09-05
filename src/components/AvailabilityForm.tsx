@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import './AvailabilityForm.css'
 
 interface AvailabilityFormProps {
   user: string; // Expecting the user ID as a string

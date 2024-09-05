@@ -1,17 +1,15 @@
-// frontend/src/components/Navbar.jsx
 import { Link } from 'react-router-dom';
-
-import  './Navbar.css'
+import './Navbar.css';
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-        Event Scheduling System
+    <nav className="navbar">
+      <div className="container-navbar">
+        <Link className="brand" to="/">
+          Event Scheduling System
         </Link>
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav ms-auto">
+        <div className="links">
+          <ul className="nav-items">
             <li className="nav-item">
               <Link className="nav-link" to="/home">
                 Home

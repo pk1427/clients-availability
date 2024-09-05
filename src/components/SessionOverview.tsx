@@ -36,6 +36,8 @@ function SessionOverview({ availability }: SessionOverviewProps) {
 
   return (
     <div>
+        
+      <h1> Available Clients</h1>
       <select
         onChange={(e) => setSelectedSlot(JSON.parse(e.target.value))}
         className="form-select"
