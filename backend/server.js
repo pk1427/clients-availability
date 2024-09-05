@@ -11,8 +11,9 @@ const app = express();
 
 // Middleware setup
 app.use(cors({
-  origin: ['https://clients-availability-1.onrender.com', 'https://clients-availability-z1cg.vercel.app'], 
-  methods: ["GET","POST"]// Add all frontend URLs here
+  origin: ['https://clients-availability-1.onrender.com', 'https://clients-availability-lx6e.vercel.app'], // No trailing slash on Vercel URL
+  methods: ["GET", "POST"], // Allow all methods you use
+  credentials: true // Allow credentials (if using sessions or cookies)
 }));
 
 app.use(express.json());
