@@ -1,27 +1,48 @@
-import React, { createContext, useState, ReactNode } from 'react';
+// src/context/AuthContext.tsx
+import React, { createContext, useContext, useState, ReactNode } from 'react';
+
+interface User {
+  _id: string;
+  email: string;
+}
 
 interface AuthContextType {
-    user: { email: string } | null;
-    setUser: (user: { email: string } | null) => void;
+  user: User | null;
+  setUser: (user: User | null) => void;
+  isAuthenticated: boolean;
+  login: (user: User) => void;
+  logout: () => void;
 }
 
-// Define the shape of the props, including children
-interface AuthProviderProps {
-    children: ReactNode;
-}
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthContext = createContext<AuthContextType>({
-    user: null,
-    setUser: () => {}
-});
+export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
 
-// Use the interface for props and extract children properly
-export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-    const [user, setUser] = useState<{ email: string } | null>(null);
+  // Derived state for authentication status
+  const isAuthenticated = user !== null;
 
-    return (
-        <AuthContext.Provider value={{ user, setUser }}>
-            {children}
-        </AuthContext.Provider>
-    );
+  // Login function to set the user
+  const login = (user: User) => {
+    setUser(user);
+  };
+
+  // Logout function to clear the user
+  const logout = () => {
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, setUser, isAuthenticated, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
 };

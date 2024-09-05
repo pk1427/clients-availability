@@ -1,0 +1,77 @@
+/* AdminDashboard.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+select, input[type="datetime-local"], input[type="number"], input[type="text"], input[type="email"], button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+select {
+    width: 100%;
+    max-width: 300px;
+}
+
+input[type="datetime-local"] {
+    width: 100%;
+    max-width: 300px;
+}
+
+input[type="number"] {
+    width: 100%;
+    max-width: 150px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+li:last-child {
+    border-bottom: none;
+}

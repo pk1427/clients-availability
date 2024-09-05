@@ -1,66 +1,72 @@
-/* General container styling */
-.availability-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 0 auto;
+/* AvailabilityInput.css */
+
+.availability-input {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Heading styling */
-.availability-container h3 {
-    font-size: 1.5rem;
-    color: #333;
+.input-group {
     margin-bottom: 20px;
 }
 
-/* Input field styling */
-.availability-container input {
+input[type="email"], input[type="datetime-local"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 4px;
 }
 
-/* Button styling */
-.availability-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+button {
+    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 4px;
+    color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-right: 10px;
 }
 
-/* Button hover effect */
-.availability-container button:hover {
-    background-color: #45a049;
+.btn-primary {
+    background-color: #007bff;
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    .availability-container {
-        padding: 15px;
-        width: 90%;
-    }
+.btn-primary:hover {
+    background-color: #0056b3;
+}
 
-    .availability-container h3 {
-        font-size: 1.2rem;
-    }
+.btn-danger {
+    background-color: #dc3545;
+}
 
-    .availability-container input,
-    .availability-container button {
-        font-size: 0.9rem;
-    }
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:last-child {
+    border-bottom: none;
 }

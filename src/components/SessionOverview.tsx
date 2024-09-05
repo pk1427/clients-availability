@@ -1,30 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import { getUserSessions } from '../utils/api';
-import './SessionOverview.css';
+import { useState } from 'react';
+import axios from 'axios';
 
-const SessionOverview: React.FC = () => {
-    const [sessions, setSessions] = useState([]);
+// Define the Availability and SessionOverviewProps interfaces
+interface Availability {
+  _id: string;
+  start: string;  // start and end are strings since you are dealing with ISO date strings
+  end: string;
+}
 
-    useEffect(() => {
-        const fetchSessions = async () => {
-            const sessionList = await getUserSessions();
-            setSessions(sessionList);
-        };
-        fetchSessions();
-    }, []);
+interface SessionOverviewProps {
+  availability: Availability[];
+}
 
-    return (
-        <div className="session-overview-container">
-            <h3>Upcoming Sessions</h3>
-            <ul>
-                {sessions.map((session: any, index: number) => (
-                    <li key={index}>
-                        {session.start} - {session.end} with {session.attendees.join(', ')}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-};
+function SessionOverview({ availability }: SessionOverviewProps) {
+  const [selectedSlot, setSelectedSlot] = useState<Availability | null>(null); // Typing the selectedSlot state
+
+  const handleSchedule = async () => {
+    if (!selectedSlot) return;
+
+    try {
+      // Assuming you have an API endpoint for scheduling sessions
+      const response = await axios.post('http://localhost:5000/api/schedule', {
+        user: 'Admin', // Replace this with a dynamic user if necessary
+        start: selectedSlot.start,
+        end: selectedSlot.end,
+        attendees: [{ name: 'Admin', email: 'admin@example.com' }],
+        type: 'one-on-one',
+      });
+      alert('Session scheduled successfully!');
+    } catch (error) {
+      console.error('Error scheduling session:', error);
+      alert('Failed to schedule session. Please check the console for details.');
+    }
+  };
+
+  return (
+    <div>
+      <select
+        onChange={(e) => setSelectedSlot(JSON.parse(e.target.value))}
+        className="form-select"
+      >
+        <option value="">Select a slot</option>
+        {availability.map((slot) => (
+          <option key={slot._id} value={JSON.stringify(slot)}>
+            {new Date(slot.start).toLocaleString()} - {new Date(slot.end).toLocaleString()}
+          </option>
+        ))}
+      </select>
+      <button onClick={handleSchedule} className="btn btn-success mt-3">
+        Schedule Session
+      </button>
+    </div>
+  );
+}
 
 export default SessionOverview;
