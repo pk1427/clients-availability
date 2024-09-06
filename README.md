@@ -27,8 +27,7 @@ The Client Availability System is a full-stack web application designed to manag
 
 ## Deployed Application
 
-- **Frontend**: [https://clients-availability-z1cg.vercel.app](https://clients-availability-z1cg.vercel.app)
-- **Backend**: [https://clients-availability-1.onrender.com](https://clients-availability-1.onrender.com)
+- **Frontend**: (https://clients-availability-lx6e.vercel.app)
 
 ## Installation
 
