@@ -1,42 +1,45 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const scheduleRoutes = require('./routes/scheduleRoutes');
-const userRoutes = require('./routes/userRoutes');
-const availabilityRoutes = require('./routes/availabilityRoutes');
-const sessionRoutes = require('./routes/sessionRoutes');
-require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const scheduleRoutes = require("./routes/scheduleRoutes");
+const userRoutes = require("./routes/userRoutes");
+const availabilityRoutes = require("./routes/availabilityRoutes");
+const sessionRoutes = require("./routes/sessionRoutes");
+require("dotenv").config();
 
 const app = express();
 
 // Middleware setup
-app.use(cors({
-  origin: ['https://clients-availability-1.onrender.com', 'https://clients-availability-lx6e.vercel.app'], // No trailing slash on Vercel URL
-  methods: ["GET", "POST"], // Allow all methods you use
-  credentials: true // Allow credentials (if using sessions or cookies)
-}));
+app.use(
+  cors({
+    origin: true, // Allows all origins
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // API routes
-app.use('/api/schedule', scheduleRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/availability', availabilityRoutes);
-app.use('/api/sessions', sessionRoutes);
+app.use("/api/schedule", scheduleRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/availability", availabilityRoutes);
+app.use("/api/sessions", sessionRoutes);
 
 // MongoDB connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected'))
-.catch(err => console.error('MongoDB connection error:', err));
+mongoose
+  .connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 // Default error handler (optional)
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send("Something broke!");
 });
 
 // Start the server
